@@ -1,18 +1,18 @@
-(define (problem locate_pickup_spatula_problem)
+(define (problem switch_off_light_problem)
   (:domain robot2)
   (:objects
     robot2 - robot
-    spatula - object
+    lightSwitch - object
     counterTop - object
   )
   (:init
     (at robot2 counterTop)
-    (at-location spatula counterTop)
+    (at-location lightSwitch counterTop)
     (inaction robot2)
   )
   (:goal
     (and
-      (holding robot2 spatula)
+      (switch-off robot2 lightSwitch)
     )
   )
 )
