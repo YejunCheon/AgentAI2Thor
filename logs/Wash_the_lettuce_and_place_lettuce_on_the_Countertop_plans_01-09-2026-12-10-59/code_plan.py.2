@@ -1,0 +1,49 @@
+To generate the problem file for the given domain and task of going to the sink, we need to follow these steps:
+
+### Step 1: Identify Objects and Initial State
+
+**Objects Involved:**
+
+- Robots: robot1
+- Object: sink
+- Initial location of robot1
+
+**Initial States:**
+
+- at-location lettuce counterTop
+- at robot1 counterTop
+- holding robot1 lettuce
+- inaction robot1
+
+### Step 2: Define Goals
+
+**Goals:**
+
+- at robot1 sink
+
+Now, let's generate the PDDL problem file based on this information.
+
+```pddl
+(define (problem go_to_sink_problem)
+  (:domain robot1)
+  (:objects
+    robot1 - robot
+    sink - object
+    counterTop - object
+    lettuce - object
+  )
+  (:init
+    (at robot1 counterTop)
+    (at-location lettuce counterTop)
+    (holding robot1 lettuce)
+    (inaction robot1)
+  )
+  (:goal
+    (and
+      (at robot1 sink)
+    )
+  )
+)
+```
+
+Problem file generation is done.

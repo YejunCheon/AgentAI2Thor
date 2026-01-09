@@ -1,0 +1,50 @@
+To generate the problem file for the given domain and task of placing the lettuce on the countertop, we need to follow these steps:
+
+Let's start by defining the objects and their initial states based on the provided list and task description.
+
+### Step 1: Identify Objects and Initial State
+
+**Objects Involved:**
+
+- Robots: robot1
+- Object: lettuce
+- Object: countertop
+
+**Initial States:**
+
+- at-location lettuce robot1
+- at robot1 countertop
+- holding robot1 lettuce
+- not (inaction robot1)
+
+### Step 2: Define Goals
+
+**Goals:**
+
+- at-location lettuce countertop
+
+Now, let's write the PDDL problem file:
+
+```pddl
+(define (problem place_lettuce_problem)
+  (:domain robot1)
+  (:objects
+    robot1 - robot
+    lettuce - object
+    countertop - object
+  )
+  (:init
+    (at robot1 countertop)
+    (at-location lettuce robot1)
+    (holding robot1 lettuce)
+    (not (inaction robot1))
+  )
+  (:goal
+    (and
+      (at-location lettuce countertop)
+    )
+  )
+)
+```
+
+Problem file generation is done.
